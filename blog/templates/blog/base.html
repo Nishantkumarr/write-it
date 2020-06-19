@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - Brand</title>
+    <link rel="stylesheet" href={% static "blog/assets/bootstrap/css/bootstrap.min.css" %}>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    <link rel="stylesheet" href={% static "blog/assets/fonts/font-awesome.min.css" %}>
+    <link rel="stylesheet" href={% static "blog/assets/fonts/simple-line-icons.min.css" %}>
+    <link rel="stylesheet" href= {% static "blog/assets/css/Bold-BS4-Footer-Simple.css" %}>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+    <link rel="stylesheet" href={% static "blog/assets/css/smoothproducts.css" %}>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+   
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
+        <div class="container"><a class="navbar-brand logo" href={% url 'blog-home' %}><i class="fa fa-home"></i></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse"
+                id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link" href={% url 'blog-name'  %} >Blog</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href={% url 'blog-about' %} >About Us</a></li>
+                   <!-- <li class="nav-item" role="presentation"><a class="nav-link" href={% url 'contact' %} >Contact Us</a></li> -->
+
+                    {% if user.is_authenticated %}
+                    <li class="nav-item" role="presentation"><a class="nav-link" href={% url 'blog-new' %} >Post</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href={% url 'logout' %} >Logout</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href={% url 'profile' request.user.username %} >Profile</a></li>
+                    {% else %}
+                    <li class="nav-item" role="presentation"><a class="nav-link" href={% url 'login' %} >Login</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href={% url 'register' %} >Register</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    {% block content %}{% endblock content %}
+
+
+    
+    <footer id="footerpad" style="background-color: rgb(254,250,250);">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-8 mx-auto" style="padding-top: 20px;">
+                        <ul class="list-inline text-center">
+                            <li class="list-inline-item"><a href="https://twitter.com/kumarrspeaks"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x fa-inverse"></i></span></a></li>
+                            <li class="list-inline-item"><a href="https://www.instagram.com/not.so.cool.banda/"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-instagram fa-stack-1x fa-inverse"></i></span></a></li>
+                            <li class="list-inline-item"><a href="https://github.com/Nishantkumarr"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-github fa-stack-1x fa-inverse"></i></span></a></li>
+                            <hr>
+                            <li class="list-inline-item"><a href={% url 'blog-about' %}>About Us</a></li>
+                            <li class="list-inline-item"><a href="#">Terms</a></li>
+                            <li class="list-inline-item"><a href="#">Links</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <script src={% static "blog/assets/js/jquery.min.js" %}></script>
+    <script src={% static "blog/assets/bootstrap/js/bootstrap.min.js" %}></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script src={% static "blog/assets/js/smoothproducts.min.js" %}></script>
+    <script src={% static "blog/assets/js/theme.js" %}></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

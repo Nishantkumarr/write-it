@@ -1,0 +1,61 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+{% load static %}
+ <!-- Post Content -->
+ <main class="page blog-post" style="padding-top: 20px;">
+  <section class="clean-block clean-post dark">
+      <div class="container">
+          <div class="block-content">
+              <div class="post-image"style="background-image:url({% static "blog/assets/img/scenery/image6.jpg" %})"></div>
+              <div class="post-body" style="padding: 130px; padding-bottom: 50px;">
+                  <h1 style="text-align: center;padding-top: 0px;font-weight: 600;">{{post.title}}</h1>
+                  <h4 style="text-align: center;padding-top: 0px;font-weight: 100;font-size: 15px;">{{post.tech}}</h4>
+                  <hr>
+                  <p>{{post.content}}</p>
+                  <div class="post-info">
+                     <a href={% url "profile" post.author.username %}> <span>By {{post.author}}</span></a>
+                     <br>
+                     <span>{{post.date_posted}}</span>
+                 </div>
+                 <div style="text-align: center;">
+                    {% if post.author == user %}
+                         <a class="btn btn-outline-secondary" href ={% url 'blog-delete' post.id %} > Delete</a>
+                         <a class="btn btn-outline-secondary" href = {% url 'blog-update' post.id %}> Update</a>
+                    {% else %}
+                        <a  class=" btn btn-outline-secondary"  href="{{ post.code_link }}">Code</a>
+                    {% endif %}
+                </div>
+                <h5>Comments</h5>
+                <hr>
+              
+                <div class=" post-info">
+                    {% for comment in post.comments.all %}
+                        <div class="post-info" style="padding-top: 0px;">
+                                <h6 style="line-height: 5px;">{{ comment.comment}}</h6>
+                                <h6 style="font-style: italic; font-weight: 40; font-size: 10px;">{{ comment.name }}  <span>{{ comment.created_date }}</span> <br>{{comment.email}}</h6>
+                        </div>
+                    {% empty %}
+                    <h6 style="line-height: 5px; font-size: 10px; padding-bottom: 40px;">Be the first one to comment !!</h6>
+                    {% endfor %}
+                </div>
+                <div>
+                    {% if post.author != user %}
+                    <h6 style="line-height: 5px;">New Comment</h6>
+                    <hr>
+
+                    <form method="POST">
+                            {% csrf_token %}
+                            {{ form |crispy }}
+                            <button type="submit" class="save btn btn-outline-primary">Send</button>
+                    </form>
+                    {% endif %}
+                </div>
+                </div>
+              </div>
+          </div>
+      </div>
+    
+  </section>
+</main>
+{% endblock content %}

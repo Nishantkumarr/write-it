@@ -1,0 +1,41 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+{%load static %}
+<!-- Main Content -->
+<main class="page login-page" style="padding-top: 20px;">
+    <section class="clean-block clean-form dark">
+        <div class="container">
+            <div class="block-heading">
+                <h2 class="text-info">Register</h2>
+                <p>"A room without books is like a body without a soul"</p>
+                <hr>
+            <form method="POST" style="background-color:transparent; text-align: left;">
+                {% csrf_token %}
+                <fieldset>
+                    <legend>JOIN TODAY</legend>
+                    {{ form |crispy }}
+                </fieldset>
+                 <div style="text-align: center;">
+                   <button type="submit" class="btn btn-outline-secondary" style="align-items: center;"> SignUp </button>
+                  </div>
+            </form>
+            <hr>
+                <h6>Already have an account? <a class class="btn btn-outline-secondary" href ={% url 'login' %}>Sign IN</a> </h6>
+        
+            </div>
+        </div>
+    </section>
+</main>
+
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+

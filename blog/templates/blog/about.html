@@ -1,0 +1,30 @@
+{% extends "blog/base.html" %}
+
+
+
+{% block content %}
+{%load static %}
+<main class="page" style="padding-top: 20px;">
+  <section class="clean-block about-us">
+        <div class="container">
+          <div class="block-heading">
+              <h2 class="text-info">About Us</h2>
+              <p>We at <strong>wrITe</strong> provide you the platform to write it down.<br>
+                 Write to express your thoughts, your exeriences and your opinions.<br>
+                 Share it and influence others too.</p>
+          </div>
+          <div class="row justify-content-center">
+                <div class="col-sm-6 col-lg-4">
+                    <div class="card clean-card text-center"><img style="height: 20%;" class="card-img-top w-100 d-block" src={% static "blog/assets/img/owner/owner.jpg" %}>
+                      <div class="card-body info " style="padding: 10px;">
+                          <h4 class="card-title">Nishant</h4>
+                          <p class="card-text">Just another Python guy</p>
+                          <div class="icons"><a href="https://github.com/Nishantkumarr"><i class="icon-social-github"></i></a><a href="https://www.instagram.com/not.so.cool.banda/"><i class="icon-social-instagram"></i></a><a href="https://twitter.com/kumarrspeaks"><i class="icon-social-twitter"></i></a></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+  </section>
+</main>
+{% endblock content %}

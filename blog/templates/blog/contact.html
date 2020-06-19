@@ -1,0 +1,38 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+{%load static %}
+<!-- Main Content -->
+<main class="page login-page" style="padding-top: 20px;">
+    <section class="clean-block clean-form dark">
+        <div class="container" >
+            <div class="block-heading">
+                <h2 class="text-info">Drop us a line</h2>
+                <hr>
+               <form method="POST" style="background-color:transparent;">
+                  {% csrf_token %}
+                   <fieldset>
+                      <legend>Contact Us </legend>
+                      {{ form |crispy }}
+                   </fieldset>
+                 <div style="text-align: center;">
+                   <button type="submit" class="btn btn-outline-secondary" style="align-items: center;"> Send </button>
+                  </div>
+            </form>
+            <hr>   
+            </div>
+        </div>
+    </section>
+</main>
+
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
