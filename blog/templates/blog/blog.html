@@ -27,12 +27,17 @@
 
                     {% endfor %}
                 </div>
-                
+
             </div>
         </div>
+        <div  style="text-align: center;padding-top: 20px;">
+            <a class="btn btn-outline-primary"  href={% url 'blog-new' %} >Post</a>
+        </div>
+
     </section>
 </main>
-<div  style="text-align: center;padding-top: 20px;">
+<div  style="text-align: center;padding-top: 20px;" style="background-color: black;">
+
     {% if is_paginated %}
         {% if page_obj.has_previous %}
                 <a href ="?page=1" class=btn btn-outline > << </a>
@@ -56,29 +61,5 @@
     {% endif %}
 
   </div>
-
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 {% endblock content %}

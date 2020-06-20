@@ -10,16 +10,55 @@
                 <h2 class="text-info">LogIn</h2>
                 <p>"A room without books is like a body without a soul"</p>
                 <hr>
-            <form method="POST" style="background-color:transparent; text-align: left; width: 40%;">
-                {% csrf_token %}
-                <fieldset>
-                    <legend>JOIN TODAY</legend>
-                    {{ form |crispy }}
-                </fieldset>
-                 <div style="text-align: center;">
-                   <button type="submit" class="btn btn-outline-secondary" style="align-items: center;"> LogIn</button>
-                  </div>
-            </form>
+                <form method="POST" style="background-color:transparent; text-align: left; width: 70%;">
+                    {% csrf_token %}
+                    <fieldset>
+                        <legend>JOIN TODAY</legend>
+                        {{ form |crispy }}
+                    </fieldset>
+                     <div style="text-align: center;">
+                       <button type="submit" class="btn btn-outline-secondary" style="align-items: center;"> LogIn</button>
+
+                      </div>
+                </form>
+            <hr>
+                <h6>New User ? <a class class="btn btn-outline-secondary" href ={% url 'register' %}>Sign Up</a> </h6><br>
+                <h6>Forgot password <a class class="btn btn-outline-secondary" href ={% url 'password-reset' %}>Reset</a> </h6>
+
+        
+            </div>
+        </div>
+    </section>
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Main Content -->
+<main class="page login-page" style="padding-top: 20px;">
+    <section class="clean-block clean-form dark">
+        <div class="container">
+            <div class="block-heading">
+                <h2 class="text-info">LogIn</h2>
+                <p>""</p>
+                <hr>
+           
             <hr>
             <h6>Crete new One <a class="ml-2" href={% url 'register' %}>Sign IN</a></h6>
 

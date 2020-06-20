@@ -1,30 +1,27 @@
 {% extends "blog/base.html" %}
-
-
-
 {% block content %}
 {%load static %}
 <main class="page" style="padding-top: 20px;">
-  <section class="clean-block about-us">
-        <div class="container">
+
+  <section class="about-us py-5">
+        <div class="container mt-5">
           <div class="block-heading">
-              <h2 class="text-info">About Us</h2>
-              <p>We at <strong>wrITe</strong> provide you the platform to write it down.<br>
-                 Write to express your thoughts, your exeriences and your opinions.<br>
-                 Share it and influence others too.</p>
-          </div>
-          <div class="row justify-content-center">
-                <div class="col-sm-6 col-lg-4">
-                    <div class="card clean-card text-center"><img style="height: 20%;" class="card-img-top w-100 d-block" src={% static "blog/assets/img/owner/owner.jpg" %}>
-                      <div class="card-body info " style="padding: 10px;">
-                          <h4 class="card-title">Nishant</h4>
-                          <p class="card-text">Just another Python guy</p>
-                          <div class="icons"><a href="https://github.com/Nishantkumarr"><i class="icon-social-github"></i></a><a href="https://www.instagram.com/not.so.cool.banda/"><i class="icon-social-instagram"></i></a><a href="https://twitter.com/kumarrspeaks"><i class="icon-social-twitter"></i></a></div>
-                      </div>
-                    </div>
+              <h2 class="text-info">Welcome</h2>
+              <h4>Know Us More</h4>
+              <hr>
+              <div class="flex-container" style ="width: 90% ;min-height: 300px; margin: 0 auto; display: -webkit-flex; /* Safari */ display: flex; /* Standard syntax */">
+                <div class="column" style="-webkit-flex: 1; -ms-flex: 1; flex: 1;min-width: 50%;max-width: 55%;">
+                    <p>We at <strong>wrITe</strong> provide you the platform to write it down.<br>
+                      Write to express your thoughts, your exeriences and your opinions.<br>
+                      Share it and influence others too.</p>
                 </div>
-            </div>
-        </div>
+                <div class="column bg-alt" style="padding-top:20px; text-align: left;">
+                          <img  class="rounded float-right" style="min-height: 40%;max-height: 55%;max-width:55%;min-width: 45%;" src={% static "blog/assets/img/scenery/image400.jpg" %}>
+                </div>
+                
+
+              </div>
+          </div>
   </section>
 </main>
 {% endblock content %}
