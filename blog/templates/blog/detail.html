@@ -23,7 +23,7 @@
                          <a class="btn btn-outline-secondary" href ={% url 'blog-delete' post.id %} > Delete</a>
                          <a class="btn btn-outline-secondary" href = {% url 'blog-update' post.id %}> Update</a>
                     {% else %}
-                        <a  class=" btn btn-outline-secondary"  href="{{ post.code_link }}">Code</a>
+                        <a  class=" btn btn-outline-secondary"  href="{{ post.links }}">Code</a>
                     {% endif %}
                 </div>
                 <h5>Comments</h5>
