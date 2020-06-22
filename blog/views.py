@@ -82,7 +82,7 @@ class TechPostListView(ListView):
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
     template_name = 'blog/update.html'
-    fields = ['title', 'tech','content','code_link']
+    fields = ['title', 'tech','content','links']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
