@@ -34,7 +34,7 @@
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item" role="presentation"><a class="nav-link" href={% url 'blog-name'  %} >Blog</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href={% url 'blog-about' %} >About Us</a></li>
-                   <li class="nav-item" role="presentation"><a class="nav-link" href={% url 'contact' %} >Contact Us</a></li>
+                   <!-- <li class="nav-item" role="presentation"><a class="nav-link" href={% url 'contact' %} >Contact Us</a></li> -->
 
                     {% if user.is_authenticated %}
                     <li class="nav-item" role="presentation"><a class="nav-link" href={% url 'blog-new' %} >Post</a></li>
