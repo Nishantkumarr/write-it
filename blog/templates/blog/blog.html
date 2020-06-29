@@ -18,8 +18,8 @@
                         <div class="col-lg-5" style="text-align: right; padding-right: 30px;"><img style="padding-bottom: 20px; width: 200px; height: 150px;"   class="rounded img-fluid" src={% static "blog/assets/img/tech/header.jpg" %}></div>
                         <div class="col-lg-7" style="padding-left: 30px;">
                             <h3 style="padding-top:4px;">{{ post.title}}</h3>
+                            <h5 style="font-size: 12px;">{{post.tech}}</h5>
                             <div class="info" style="padding-top:0px;"><span class="text-muted"> by<a href={% url 'profile' post.author.username %}> {{post.author}}</a> <br> {{post.date_posted}}</span></div>
-                            <a href={% url 'tech-post' post.tech %}><h5 style="font-size: 9px;">{{post.tech}}</h5></a><br>
                             <a href={% url 'blog-detail' post.id %}  class="btn btn-outline-primary btn-sm"> Learn More</a>
                         </div>
                     </div>

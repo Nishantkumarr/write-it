@@ -5,8 +5,23 @@ from django.contrib.auth.models import  User
 
 class Post (models.Model) :
      title = models.CharField(max_length=180)
-     tech = models.CharField(max_length=180 , default = 'Tech1')
-     content = models.TextField(default = 'content')
+     #choice feild code 
+     class Tech (models.TextChoices):
+           PYTHON = 'Python' , "Python"
+           JAVASCRIPT = 'Javascript', "Javascript"
+           JAVA = 'Java' ,"Java"
+           HTML = 'Html',"Html"
+           CSS = 'Css',"Css"
+           BOOTSTRAP='Bootstrap', "Bootstrap"
+           NODEJS ='Node.js' ,"Node.js"
+           ANGULAR='Angular',"Angular"
+           REACT='React',"React"
+           FLUTTER='Flutter',"Flutter"
+      
+     tech = models.CharField(max_length=180 ,choices=Tech.choices, default = 'Tech-Used')
+     para_1 = models.TextField(default = 'content')
+     para_2 = models.TextField(blank=True)
+     para_3 = models.TextField(blank=True)
      date_posted = models.DateTimeField(default=timezone.now)
      author = models.ForeignKey(User, on_delete=models.CASCADE)
      links=models.URLField(blank=True)
