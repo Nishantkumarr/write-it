@@ -151,6 +151,6 @@ DJRICHTEXTFIELD_CONFIG = {
         'menubar': False,
         'plugins': 'link image',
         'toolbar': 'bold italic | link image | removeformat',
-        'width':  754
+        'width':  'auto',
     }
 }
