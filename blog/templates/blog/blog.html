@@ -3,60 +3,97 @@
 {% block content %}
 
 
-<main class="page blog-post-list" style="padding-top: 20px;">
-    <section class="clean-block clean-blog-list dark">
+<main class="page blog-post" style="padding-top: 20px;">
+    <section class="clean-block clean-post dark" style="padding-top: 20px;">
         <div class="container">
             <div class="block-heading">
-                <h1 class="text-info" style="font-weight: 600;">wrITe</h1>
-                <p>“There is no greater agony than bearing an untold story inside you.”</p>
+                <style>
+                    .texttech{
+                        color: black;
+                    }
+                </style>
+                <h1 class="texttech" style="font-weight: 500;font-size: 100px;background-color: rgba(100, 100, 100, 0.2);padding-bottom: 30px;">wrITe 
+                    <span> <h5>Write it , Right now</h5>
+                </h1>
+
                 <hr>
             </div>
-            <div class="block-content" style="padding: 50px;">
+            <div class="block-content">
+                <div class="post-body" style="padding-right: 14%;padding-left: 14%; padding-bottom: 12%; padding-top: 6%; margin-left: 5%;margin-right: 5%;">
                 <div class="clean-blog-post" style="padding-bottom: 30px;">
                     {% for post in posts %}
-                    <div class="row">
-                        <div class="col-lg-5" style="text-align: right; padding-right: 30px;"><img style="padding-bottom: 20px; width: 200px; height: 150px;"   class="rounded img-fluid" src={% static "blog/assets/img/tech/header.jpg" %}></div>
-                        <div class="col-lg-7" style="padding-left: 30px;">
-                            <h3 style="padding-top:4px;">{{ post.title}}</h3>
-                            <h5 style="font-size: 12px;">{{post.tech}}</h5>
-                            <div class="info" style="padding-top:0px;"><span class="text-muted"> by<a href={% url 'profile' post.author.username %}> {{post.author}}</a> <br> {{post.date_posted}}</span></div>
-                            <a href={% url 'blog-detail' post.id %}  class="btn btn-outline-primary btn-sm"> Learn More</a>
-                        </div>
-                    </div>
-                    <hr style="padding-top: 15x; width: 45%;">
+                    <!-- Card -->
+                    <div class="card card-cascade wider reverse">
 
+                        <!-- Card image -->
+                        <div class="view view-cascade overlay">
+                            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Slides/img%20(70).jpg"
+                            alt="Card image cap">
+                        <a href="#!">
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                        </div>
+                    
+                        <!-- Card content -->
+                        <div class="card-body card-body-cascade text-center">
+                    
+                        <!-- Title -->
+                        <h4 class="card-title" style="padding-bottom: 0px;font-size: 30px;"><strong>{{post.title}}</strong></h4>
+                        <!-- Subtitle -->
+                        <style>
+                            .link { color: black; } 
+                            .link:hover { color: red; } 
+                        </style>
+                        <style>
+                            .linkauthor { color:rgb(46, 43, 43); } 
+                            .linkauthor:hover { color:  rgba(237, 245, 84,0.3); } 
+                        </style>
+                        <a href={% url 'tech-post' post.tech %} class="link" style="font-size: 15px;">{{post.tech}}</span></a>
+                        <br mt-2>
+                        <a  style="font-size: 11px; font-weight: 90;" href={% url "profile" post.author.username %} class="linkauthor">{{post.author}}</a>
+                        <!-- Text -->
+                        <p class="card-text">
+                            {{post.para_1|truncatewords_html:20|safe}}
+                        </p>
+                    
+                        <!-- Linkedin -->
+                        <a class="px-2 fa-lg li-ic" href={% url 'blog-detail' post.id %}>Read more</a>
+                        </div>
+                    
+                    </div>
+                    <!-- Card -->
+                                        
+                    <hr style="padding-top: 15x; width: 45%;">
                     {% endfor %}
+                    <div  style="text-align: center;padding-top: 20px;">
+                        <a class="btn btn-outline-primary"  href={% url 'blog-new' %} >Post</a>
+                    </div>
+            
                 </div>
 
             </div>
-        </div>
-        <div  style="text-align: center;padding-top: 20px;">
-            <a class="btn btn-outline-primary"  href={% url 'blog-new' %} >Post</a>
-        </div>
-
+        </div> 
     </section>
 </main>
 <div  style="text-align: center;padding-top: 20px;" style="background-color: black;">
 
     {% if is_paginated %}
         {% if page_obj.has_previous %}
-                <a href ="?page=1" class=btn btn-outline > << </a>
-                <a href ="?page={{page_obj.previous}}" class=btn btn-outline > <</a>
+                <a href ="?page=1" class=btn btn-outline  style="background-color:#b7daff;border-color:#007bff;"> <span style="text-decoration-color: black;"><<</span></a>
+                
         {% endif %}
-       
         {% for num in page_obj.paginator.page_range %}
             {% if page_obj.number == num %}
-                <a class="btn btn-info mb-4" style="border-radius: 20px;" href ="?page={{num}}">{{num}}</a>
+                <a class="btn btn-info mb-4" style="border-radius: 20px;background-color:#b7daff;border-color:#007bff;" href ="?page={{num}}"><span style="text-decoration-color: black;">{{num}}</span></a>
             {% elif num > page_obj.number|add:'-3' and  num < page_obj.number|add:'3' %} 
-                <a class="btn btn-outline-info mb=4" href = "?page={{num}}"> {{num}}</a>
+                <a class="btn btn-outline-info mb=2" href = "?page={{num}}"  style="background-color:#b7daff;border-color:#007bff;"><span style="text-decoration-color: black;">{{num}}</span></a>
             {% endif %}
         {%endfor%}
 
         {% if page_obj.has_next %}
-                <a href ="?page={{page_obj.next_page.number}}" class=btn btn-outline >></a>
-                <a href ="?page={{page_obj.paginator.num_pages}}" class=btn btn-outline > >></a>
-       {% endif %}
-      
+                <a href ="?page={{page_obj.paginator.num_pages}}" class=btn btn-outline style="background-color:#b7daff;border-color:#007bff;" > <span style="text-decoration-color: black;">>></span></a>
+        {% endif %}
+
 
     {% endif %}
 

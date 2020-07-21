@@ -2,39 +2,38 @@
 {% load crispy_forms_tags %}
 {% block content %}
 {% load static %}
- <!-- Post Content -->
- <main class="page blog-post" style="padding-top: 20px;">
-  <section class="clean-block clean-post dark">
-      <div class="container">
-          <div class="block-content">
-              <div class="post-image"style="background-image:url({% static "blog/assets/img/scenery/image3.jpg" %})"></div>
-              <div class="post-body" style="padding-right: 16%;padding-left: 16%; padding-bottom: 12%; padding-top: 6%;">
-                  <h1 style="text-align: center;padding-top: 0px;font-weight: 600;">{{post.title}}</h1>
-                  <a href={% url 'tech-post' post.tech %}><h4 style="text-align: center;padding-top: 0px;font-weight: 100;font-size: 15px;">{{post.tech}}</h4></a>
-                  <hr>
-                  <p>{{post.para_1}}</p><br>
-                  <p>{{post.para_2}}</p><br>
-                  <p>{{post.para_3}}</p><br>
+    <!-- Post Content -->
+    <main class="page blog-post" style="padding-top: 20px;">
+    <section class="clean-block clean-post dark">
+        <div class="container">
+            <div class="block-content">
+                <div class="post-image"style="background-image:url({% static "blog/assets/img/scenery/image3.jpg" %})"></div>
+                <div class="post-body" style="padding-right: 16%;padding-left: 16%; padding-bottom: 12%; padding-top: 6%;">
+                    <h1 style="text-align: center;padding-top: 0px;font-weight: 600;">{{post.title}}</h1>
+                    <a href={% url 'tech-post' post.tech %}><h4 style="text-align: center;padding-top: 0px;font-weight: 100;font-size: 15px;">{{post.tech}}</h4></a>
+                    <hr>
+                    <p>{{post.para_1|safe}}</p><br>
+                    
 
 
-                  
-                  <div class="post-info">
-                     By<a href={% url "profile" post.author.username %}> <span>{{post.author}}</span></a>
-                     <br>
-                     <span>{{post.date_posted}}</span>
-                 </div>
-                 <div style="text-align: center;">
-                    {% if post.author == user %}
-                         <a class="btn btn-outline-secondary" href ={% url 'blog-delete' post.id %} > Delete</a>
-                         <a class="btn btn-outline-secondary" href = {% url 'blog-update' post.id %}> Update</a>
-                    {% else %}
-                         <a  class= "btn btn-outline-secondary"  href= "{{ post.links }}">Click</a>
+                    
+                    <div class="post-info">
+                        By<a href={% url "profile" post.author.username %}> <span>{{post.author}}</span></a>
+                        <br>
+                        <span>{{post.date_posted}}</span>
+                    </div>
+                    <div style="text-align: center;">
+                        {% if post.author == user %}
+                            <a class="btn btn-outline-secondary" href ={% url 'blog-delete' post.id %} > Delete</a>
+                            <a class="btn btn-outline-secondary" href = {% url 'blog-update' post.id %}> Update</a>
+                        {% else %}
+                            <a  class= "btn btn-outline-secondary"  href= "{{ post.links }}">Click</a>
                     {% endif %}
                 </div>
                 <hr>
                 <h5>Comments</h5>
                 <hr>
-              
+                
                 <div class=" post-info" >
                     {% for comment in post.comments.all %}
                         <div class="post-info" style="padding-top: 0px;">
@@ -51,15 +50,16 @@
 
                     <form method="POST">
                             {% csrf_token %}
+                            {{ form.media }}
                             {{ form |crispy }}
                             <button type="submit" class="save btn btn-outline-primary">Send</button>
                     </form>
                 </div>
                 </div>
-              </div>
-          </div>
-      </div>
-    
-  </section>
+                </div>
+            </div>
+        </div>
+        
+    </section>
 </main>
 {% endblock content %}

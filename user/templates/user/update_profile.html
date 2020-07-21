@@ -3,39 +3,47 @@
 {%load static %}
 {% block content %}
 <!-- Main Content -->
-<main class="page registration-page" style="padding-top: 20px;">
-    <section class="clean-block clean-form dark">
+    <main class="page blog-post" style="padding-top: 20px;">
+    <section class="clean-block clean-post dark">
         <div class="container">
-            <div class="block-heading">
-                <h2 class="text-info">{{user.profile.name}}</h2>
-                <p>{{user.profile.bio}}</p>
-            </div>
-            <hr>
-            <div class="container emp-profile" style=" padding:5%;text-align: center;">
-                <div class="row" style="padding-left: 200px ;text-align: center;">
-                    <div class=  "col-md-6">    
-                        <form method="POST" enctype="multipart/form-data" style="width: 640px; height: auto;text-align:left;">
-                            {% csrf_token %}
-                            <fieldset class="form-group">
-                                <legend class="border-bottom mb-4">Profile Info</legend>
-                                <div  style="text-align: right;">
-                                    <a href={% url 'profile' user.username %} class="profile-edit-btn" style="background-color: #DCDCDC;border-radius: 10px;padding: 5px;">Profile</a>
-                                </div>
-                                {{ u_form|crispy }}
-                                {{ p_form|crispy }}
-                            </fieldset>
-                            <div class="form-group" style="text-align: center;">
-                                <button class="btn btn-primary" type="submit"  >Update</button>
-                            </div>
-                        </form>
-                    </div>
-
+            <div class="block-content">
+                <div class="post-image"style="background-image:url({% static "blog/assets/img/scenery/image3.jpg" %})"></div>
+                <div class="block-heading">
+                    <h2 class="text-info">{{user.profile.name}}</h2>
+                    <p>{{user.profile.bio}}</p>
                 </div>
-            </div>                    
+                <hr>
+                <div class="container emp-profile" style=" padding:5%;text-align: center;">
+                    <div class="row" style="padding-left: 200px ;text-align: center;">
+                        <div class=  "col-md-6">    
+                            <form method="POST" enctype="multipart/form-data" style="width: 640px; height: auto;text-align:left;">
+                                {% csrf_token %}
+                                <fieldset class="form-group">
+                                    <legend class="border-bottom mb-4">Profile Info</legend>
+                                    <div  style="text-align: right;">
+                                        <a href={% url 'profile' user.username %} class="profile-edit-btn" style="background-color: #DCDCDC;border-radius: 10px;padding: 5px;">Profile</a>
+                                    </div>
+                                    {{ u_form|crispy }}
+                                    {{ p_form|crispy }}
+                                </fieldset>
+                                <div class="form-group" style="text-align: center;">
+                                    <button class="btn btn-primary" type="submit"  >Update</button>
+                                </div>
+                            </form>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
         </div>
+        
     </section>
 </main>
 {% endblock content %}
+
+
+
+
 
 
 

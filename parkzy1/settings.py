@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'djrichtextfield',
 ]
 
 MIDDLEWARE = [
@@ -140,3 +141,16 @@ EMAIL_HOST_USER = os.environ.get('hostemail')
 EMAIL_HOST_PASSWORD = os.environ.get('hostpass')
 
 django_heroku.settings(locals())
+
+
+
+DJRICHTEXTFIELD_CONFIG = {
+    'js': ['//cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js'],
+    'init_template': 'djrichtextfield/init/tinymce.js',
+    'settings': {
+        'menubar': False,
+        'plugins': 'link image',
+        'toolbar': 'bold italic | link image | removeformat',
+        'width':  754
+    }
+}

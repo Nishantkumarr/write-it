@@ -3,26 +3,28 @@
 {% block content %}
 {%load static %}
 <!-- Main Content -->
-
-
-<main class="page login-page" style="padding-top: 20px;">
-    <section class="clean-block clean-form dark">
+<main class="page blog-post" style="padding-top: 20px;">
+    <section class="clean-block clean-post dark">
         <div class="container">
-            <div class="block-heading">
-                <h2 class="text-info"></h2>
-            </div>
-            <form method="POST">
-                {% csrf_token %}
-                <fieldset>
-                    <legend>Update</legend>
-                    {{ form |crispy }}
-                </fieldset>
-                 <div style="text-align: center;">
-                   <button type="submit" class="btn btn-outline-secondary">Update </button>
-                  </div>
-            </form>
-        </div>
-    </section>
-</main>
-
+            <div class="block-content">
+                <div class="post-image"style="background-image:url({% static "blog/assets/img/scenery/image3.jpg" %})"></div>
+                <div class="post-body" style="padding-right: 16%;padding-left: 16%; padding-bottom: 12%; padding-top: 6%;">
+                    <h1 style="text-align: center;padding-top: 0px;font-weight: 600;">New Post</h1>
+                    <a><h4 style="text-align: center;padding-top: 0px;font-weight: 100;font-size: 15px;">In teaching others we teach ourselves</h4></a>
+                    <hr>
+                    <p>
+                        <form method="POST" >
+                            {% csrf_token %}
+                            <fieldset>
+                                <legend>New Post</legend>
+                                {{ form.media }}
+                                {{ form |crispy }}
+                            </fieldset>
+                                <div>
+                                <button type="submit" class="btn btn-outline-secondary"> Update </button>
+                                </div>
+                        </form>
+                    </p><br>
+        </section>
+    </main>
 {% endblock content %}

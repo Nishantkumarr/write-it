@@ -2,26 +2,171 @@
 {% block content %}
 {%load static %}
 <main class="page" style="padding-top: 20px;">
-  <section class="clean-block about-us">
-        <div class="container">
-          <div class="block-heading">
-              <h2 class="text-info">About Us</h2>
-              <p>We at <strong>wrITe</strong> provide you the platform to write it down.<br>
-                 Write to express your thoughts, your exeriences and your opinions.<br>
-                 Share it and influence others too.</p>
-          </div>
-          <div class="row justify-content-center">
-                <div class="col-sm-6 col-lg-4">
-                    <div class="card clean-card text-center"><img style="height: 20%;" class="card-img-top w-100 d-block" src={% static "blog/assets/img/owner/owner.jpg" %}>
-                      <div class="card-body info " style="padding: 10px;">
-                          <h4 class="card-title">Nishant</h4>
-                          <p class="card-text">Just another Python guy</p>
-                          <div class="icons"><a href="https://github.com/Nishantkumarr"><i class="icon-social-github"></i></a><a href="https://www.instagram.com/not.so.cool.banda/"><i class="icon-social-instagram"></i></a><a href="https://twitter.com/kumarrspeaks"><i class="icon-social-twitter"></i></a></div>
-                      </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-  </section>
+<style>
+	
+		body{
+			background: #ffffff;
+			font-family: tahoma;
+			text-align: justify;
+			
+			
+		}
+	
+		#about{
+			padding-top: 98px;
+			padding-bottom: 101px;
+		}
+	
+		#about .triangle-right{
+			margin-top: 95px;
+			width: 0;
+			height: 0;
+			border-top: 259px solid transparent;
+			border-left: 470px solid #d6c6b2;
+			border-bottom: 259px solid transparent;
+			
+			
+		}
+	
+		#about .triangle-right img{
+			position: absolute;
+			left: -1px;
+			top: 81px;
+			width: 74%;
+	
+		}
+	
+		.fa-play{
+			font-size: 100px;
+			
+		}
+		
+		
+		#about .p-first{
+			margin-bottom: 30px;
+		}
+		
+		
+		#about h2{
+			margin-bottom: 47px;
+			margin-top: 12px;
+			
+		}
+		
+		
+		#about .social-link-text{
+			margin-top: 50px;
+			margin-bottom: 25px;			
+			
+		}
+		
+		#about .about-link{
+			padding-left: 0px;
+		}
+		
+		#about .about-link li{
+			display: inline-block;
+		}
+		
+		#about .about-link li a i{
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			line-height: 50px;
+			text-align: center;
+			border: 1px solid;
+			margin-right: 10px;
+			font-size: 22px;
+			
+			transition: all .3s;
+			
+		}
+		
+		
+		#about .about-link li a i:hover{
+			color: #222222;
+			
+			
+		}
+	
+		
+		#about .about-img{
+			position: relative;
+			
+		}
+		
+		#about .about-img{
+			position: relative;
+			
+		}
+		
+		#about .about-img .man{
+			position: absolute;
+			bottom: 161px;
+			top: 12px;
+			left: -2px;
+			
+		}
+		
+		
+		
+				
+		p{
+			margin-bottom: 0;
+			font-size: 16px;
+			line-height: 24px;
+			color: #000000;
+		}
+		
+		
+		
+		
+	</style>
+
+	<section id="about">
+    
+	<div class="container">
+		<div class="row">
+		<div class="col-md-5">
+			<div class="about-img">
+            <img class="shape" src={% static "blog\assets\img\avatars\mecanvas.png" %} style="width: 450px;" alt="">
+            
+            
+			</div>
+		</div>
+		<br>
+		<div class="col-md-7 about-left " style="padding-top: 30px;margin-top: 20px; ">
+			
+			<h2 class="color-3"><b>Nishant Kumar</b>
+			</h2>
+			
+			<p class="p-first">
+        A <em><b>Full stack developer</b></em> .Solution-driven professional excelling in highly collaborative work environment, finding solutions to challenges and focused
+        on customer satisfaction. Proven experience developing consumer-focused web sites using
+        <strong>HTML, CSS, BootStrap, NodeJS, JQuery, Django , Flask </strong>and MVC framework.And trying my hands on react. Also having hand full of experience in
+        <strong>Graphics Design</strong>. Responding to challenges by designing and developing solutions and building web applications aligned to customer service.
+        Translating solutions into code and working across many different APIs, third-party integrations and databases.
+			</p>
+			<p>
+			</p>
+			
+			
+			<ul class="about-link">
+				<li><a href=""><i class="fa fa-github"></i></a></li>
+				
+				<li><a href=""><i class="fa fa-linkedin"></i></a></li>
+				
+				
+				<li><a href=""><i class="fa fa-instagram"></i></a></li>
+				
+
+			</ul>
+		
+			
+		</div>
+	
+		</div>
+	</div>
+</section>
 </main>
 {% endblock content %}
