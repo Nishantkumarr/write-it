@@ -11,17 +11,16 @@
 
 
 <main class="page login-page" style="padding-top: 20px;">
-  <section class="clean-block clean-form dark">
-      <div class="container">
-          <div class="block-heading">
-            <p style="font-weight: 100;font-size: 30px;">Profile</p>
-            <h1 class="textauthor" style="font-size: 17px;">{{user.username}}</h1>
-
-          </div>
+    <section class="clean-block clean-form dark">
+        <div class="container">
+            <div class="block-heading" style="padding-top: 10%;padding-bottom: 5%;">
+                <div class="post-image"style="background-image:url({% static "blog/assets/img/scenery/image3.jpg" %})"></div>
+                <div class="post-body" style="padding-right: 16%;padding-left: 16%; padding-bottom:3%; padding-top: 2%;">
+                    <h1 style="text-align: center;padding-top: 0px;font-weight: 600;">Profile</h1>
+                    <p class="textauthor" style="font-size: 17px;text-align: center;">{{user.username}}</p>
+                </div>
             <style>
-                body{
-                    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
-                }
+                
                 * {
                 box-sizing: border-box;
                 }
@@ -148,7 +147,7 @@
             </style>   
 
 
-            <div class="container emp-profile">
+            <div class="container emp-profile" style="background-color:#f5f8fd;height: 60%;">
                 <div class="row">
                     <div class="column" style="height: 200px;">
                       <div class="profile-img" style="text-align: right;padding-right: 40px;">
@@ -158,15 +157,12 @@
                           <hr>
                           <h4 style="font-size: 18px;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; padding-left: 20px;">{{user.profile.name}}</h4>
                           <h6 style="font-size: 12px; padding-left: 20px; font-weight: 200;font-style: italic;">{{user.profile.bio}}</h6>
-                          {% if user.profile.user_website != NULL %}{
-                          <a href="{{user.profile.user_website}}"><h6><i class="fas fa-link"></i> Link</h6></a>
-                          }{% endif %}
+                          {% if user.profile.user_website != Null %}
+                          <a href="{{user.profile.user_website}}"><h6><i class="fas fa-code"></i>Website</h6></a>
+                          {% endif %}
 
                       </div>
                     </div>
-                    
-                    
-                    
                     <div class="column" style="height:200px">
                         <div class="profile-head">
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -196,7 +192,7 @@
                                 </div>
                                
                                 <div class="row">
-                                    <div class="col">
+                                    <div class="col" style="width: auto;">
                                       <label>Email   :- </label>
                                     </div>
                                     <div class="col">
@@ -213,23 +209,19 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                            </div>
                         </div>
                     </div>
-                    <div class="column" style="height: 100px;text-align: center;">
-                     {% if request.user.username == user.username %}
-                          <a href={% url 'update_profile' user.username %} class="profile-edit-btn" style="background-color: #DCDCDC;border-radius: 10px;padding:5px;">Edit Profile</a>
-                     {%endif%}
+                    <div class="column" style="height: 100px;text-align: center;padding-top: 40px;">
+                    <a href={% url 'user-post' user.username %} class="profile-edit-btn"style="background-color: #DCDCDC;border-radius: 10px;padding:5px;">Posts</a>
+                    {% if request.user.username == user.username %}
+                        <a href={% url 'update_profile' user.username %} class="profile-edit-btn" style="background-color: #DCDCDC;border-radius: 10px;padding:5px;">Edit Profile</a>
+                    {%endif%}
                     </div>
-                  </div>
-                  
-
-
+                </div>
             </div>
-                    
         </div>
-  </section>
+    </section>
+
 </main>
   
 {% endblock content %}

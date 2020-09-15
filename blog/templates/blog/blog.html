@@ -4,27 +4,18 @@
 
 
 <main class="page blog-post" style="padding-top: 20px;">
-    <section class="clean-block clean-post dark" style="padding-top: 20px;">
+    <section class="clean-block clean-form dark">
         <div class="container">
-            <div class="block-heading">
-                <style>
-                    .texttech{
-                        color: black;
-                    }
-                </style>
-                <h1 class="texttech" style="font-weight: 500;font-size: 100px;background-color: rgba(100, 100, 100, 0);padding-bottom: 30px;">wrITe 
-                    <span> <h5>Write it , Right now</h5>
-                </h1>
-
+            <div class="block-heading" style="padding-top: 10%;padding-bottom: 5%;">
+                <div class="post-image"style="background-image:url({% static "blog/assets/img/scenery/image3.jpg" %})"></div>
+                <div class="post-body" style="padding-right: 16%;padding-left: 16%; padding-bottom: 12%; padding-top: 6%;">
                 <hr>
             </div>
-            <div class="block-content">
                 <div class="post-body" style="padding-right: 14%;padding-left: 14%; padding-bottom: 12%; padding-top: 6%; margin-left: 5%;margin-right: 5%;">
                 <div class="clean-blog-post" style="padding-bottom: 30px;">
                     {% for post in posts %}
                     <!-- Card -->
                     <div class="card card-cascade wider reverse">
-
                         <!-- Card image -->
                         <div class="view view-cascade overlay">
                             <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Slides/img%20(70).jpg"
@@ -33,36 +24,36 @@
                             <div class="mask rgba-white-slight"></div>
                         </a>
                         </div>
-                    
-                        <!-- Card content -->
-                        <div class="card-body card-body-cascade text-center">
-                    
-                        <!-- Title -->
-                        <h4 class="card-title" style="padding-bottom: 0px;font-size: 30px;"><strong>{{post.title}}</strong></h4>
-                        <!-- Subtitle -->
-                        <style>
-                            .link { color: black; } 
-                            .link:hover { color: red; } 
-                        </style>
-                        <style>
-                            .linkauthor { color:rgb(46, 43, 43); } 
-                            .linkauthor:hover { color:  rgba(237, 245, 84,0.3); } 
-                        </style>
-                        <a href={% url 'tech-post' post.tech %} class="link" style="font-size: 15px;">{{post.tech}}</span></a>
-                        <br mt-2>
-                        <a  style="font-size: 11px; font-weight: 90;" href={% url "profile" post.author.username %} class="linkauthor">{{post.author}}</a>
-                        <!-- Text -->
-                        <p class="card-text">
-                            {{post.para_1|truncatewords_html:20|safe}}
-                        </p>
-                    
-                        <!-- Linkedin -->
-                        <a class="px-2 fa-lg li-ic" href={% url 'blog-detail' post.id %}>Read more</a>
+                        <a class="px-2 fa-lg li-ic" href={% url 'blog-detail' post.id %}>
+                            <!-- Card content -->
+                            <div class="card-body card-body-cascade text-center">
+                        
+                            <!-- Title -->
+                            <h4 class="card-title" style="padding-bottom: 0px;font-size: 30px;font-weight: 300;"><strong>{{post.title}}</strong></h4>
+                            <!-- Subtitle -->
+                            <style>
+                                .link { color: black; } 
+                                .link:hover { color: red; } 
+                            </style>
+                            <style>
+                                .linkauthor { color:rgb(46, 43, 43); } 
+                                .linkauthor:hover { color:  rgba(237, 245, 84,0.3); } 
+                            </style>
+                            <a href={% url 'tech-post' post.tech %} class="link" style="font-size: 15px;">{{post.tech}}</span></a>
+                            <br mt-2>
+                            <a  style="font-size: 11px; font-weight: 90;" href={% url "profile" post.author.username %} class="linkauthor">{{post.author}}</a>
+                            <!-- Text -->
+                            <p class="card-text">
+                                {{post.para_1|truncatewords_html:20|safe}}
+                            </p>
+                            
+                            <!-- Linkedin -->
+                            <a class="px-2 fa-lg li-ic" href={% url 'blog-detail' post.id %}>Read more</a>
+                            </div>
+                        
                         </div>
-                    
-                    </div>
                     <!-- Card -->
-                                        
+                    </a>                
                     <hr style="padding-top: 15x; width: 45%;">
                     {% endfor %}
                     <div  style="text-align: center;padding-top: 20px;">

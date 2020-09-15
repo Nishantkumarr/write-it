@@ -7,8 +7,8 @@
     <section class="clean-block clean-post dark">
         <div class="container">
             <div class="block-content">
-                <div class="post-image"style="background-image:url({% static "blog/assets/img/scenery/image3.jpg" %})"></div>
                 <div class="block-heading">
+                    <img src={{user.profile.image.url}} style="width: auto; height: auto; " alt=""/>
                     <h2 class="text-info">{{user.profile.name}}</h2>
                     <p>{{user.profile.bio}}</p>
                 </div>
@@ -20,14 +20,12 @@
                                 {% csrf_token %}
                                 <fieldset class="form-group">
                                     <legend class="border-bottom mb-4">Profile Info</legend>
-                                    <div  style="text-align: right;">
-                                        <a href={% url 'profile' user.username %} class="profile-edit-btn" style="background-color: #DCDCDC;border-radius: 10px;padding: 5px;">Profile</a>
-                                    </div>
                                     {{ u_form|crispy }}
                                     {{ p_form|crispy }}
                                 </fieldset>
                                 <div class="form-group" style="text-align: center;">
                                     <button class="btn btn-primary" type="submit"  >Update</button>
+                                    <a href={% url 'profile' user.username %} class="btn btn-primary">Profile</a>
                                 </div>
                             </form>
                         </div>

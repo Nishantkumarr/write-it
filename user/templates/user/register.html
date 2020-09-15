@@ -6,10 +6,13 @@
 <main class="page login-page" style="padding-top: 20px;">
     <section class="clean-block clean-form dark">
         <div class="container">
-            <div class="block-heading">
-                <h2 class="text-info">Register</h2>
-                <p>"A room without books is like a body without a soul"</p>
-                <hr>
+            <div class="block-heading" style="padding-top: 10%;padding-bottom: 5%;">
+                <div class="post-image"style="background-image:url({% static "blog/assets/img/scenery/image3.jpg" %})"></div>
+                <div class="post-body" style="padding-right: 16%;padding-left: 16%; padding-bottom: 12%; padding-top: 6%;">
+                    <h1 style="text-align: center;padding-top: 0px;font-weight: 600;">wrITe</h1>
+                    <a><h4 style="text-align: center;padding-top: 0px;font-weight: 100;font-size: 15px;">In teaching others we teach ourselves</h4></a>
+                    <hr>
+                    <p>
             <form method="POST" style="background-color:transparent; text-align: left;">
                 {% csrf_token %}
                 <fieldset>

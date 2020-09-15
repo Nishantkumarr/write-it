@@ -1,0 +1,64 @@
+
+<main class="page landing-page" style="padding-top: 20px;">
+    <section class="clean-block clean-hero" style="color: rgba(25,26,27,0.55); background-image: url( '{% static 'blog/assets/img/scenery/image21.jpg' %}' );">
+        <div class="text">
+            <h1 style="font-size: 4rem; font-weight: 400; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">wrITe</h1>
+            <hr>
+            <h5 style="padding-bottom: 50px;font-family:'Courier New', Courier, monospace; font-style: italic;font-size:1em;">“It's the possibility of having a dream come true that makes life interesting ”</h5>
+            {% if user.is_authenticated %}
+            <a  href={% url 'blog-name' %} class="btn btn-outline-light btn-lg" type="button" >Blog</a>
+            {% else %}
+            <a  href={% url 'register' %} class="btn btn-outline-light btn-lg" type="button" >Get Started</a>
+            {% endif %}
+        </div>
+</section>
+    
+
+
+
+
+
+<section class="clean-block features" style="padding-bottom:55px">
+    <div class="container">
+        <div class="block-heading">
+            <h2 class="text-info" style="font-size: 24px;">Tech Stack</h2>
+            <p>Plan out today and see your tommorrow Changing</p>
+        </div>
+
+        <div class="row justify-content-center">
+            <section class="features-icons bg-light text-center" style="background-color: #fafafa;">
+                <div class="container" >
+                    <div class="row">
+                        <div class="col-lg-4" style="background-color: #ffffff;">
+                            <div class="mx-auto features-icons-item mb-5 mb-lg-0 mb-lg-3">
+                                <div><img class="mx-auto d-block" style="width: 60px;height: 60px;border-radius: 50%;" src={% static "blog/assets/img/avatars/dj.png" %}></img></div>
+                                <h3>Django</h3>
+                                <p class="lead mb-0">We have used Django for the backend of this site</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4" style="background-color: #ffffff;" >
+                            <div class="mx-auto features-icons-item mb-5 mb-lg-0 mb-lg-3">
+                                <div><img class="mx-auto d-block" style="width: 60px;height: 60px;border-radius: 50%;" src={% static "blog/assets/img/avatars/boots.png" %}></img></div>
+                                <h3>Bootstrap</h3>
+                                <p class="lead mb-0">It makes it a full responsive layout </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4" style="background-color: #ffffff;">
+                            <div class="mx-auto features-icons-item mb-5 mb-lg-0 mb-lg-3">
+                                <div><img class="mx-auto d-block" style="width: 60px;height: 60px;border-radius: 50%;" src={% static "blog/assets/img/avatars/postg.jpg" %}></img></div>
+                                <h3> Postgre SQL</h3>
+                                <p class="lead mb-0">For the databse we have decided to use Postgre Sql</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</section>  
+
+
+
+</section>
+
