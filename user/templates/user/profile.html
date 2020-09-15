@@ -15,9 +15,9 @@
         <div class="container">
             <div class="block-heading" style="padding-top: 10%;padding-bottom: 5%;">
                 <div class="post-image"style="background-image:url({% static "blog/assets/img/scenery/image3.jpg" %})"></div>
-                <div class="post-body" style="padding-right: 16%;padding-left: 16%; padding-bottom:3%; padding-top: 2%;">
-                    <h1 style="text-align: center;padding-top: 0px;font-weight: 600;">Profile</h1>
-                    <p class="textauthor" style="font-size: 17px;text-align: center;">{{user.username}}</p>
+                <div class="post-body" style="padding-right: 16%;padding-left: 16%; padding-bottom:2%; padding-top: 3%;">
+                    <h1 style="text-align: center;padding-top: 10px;font-weight: 600;margin-bottom: 5px;">Profile</h1>
+                    <p class="textauthor" style="font-size: 17px;text-align: center;margin-bottom: 10px;">{{user.username}}</p>
                 </div>
             <style>
                 
@@ -50,6 +50,8 @@
                 .col{
                     padding-left: 10px;
                     padding-bottom: 8px;
+                    min-width: auto;
+                    max-width: 130px;
                 }
                 .emp-profile{
                     padding: 3%;
@@ -175,13 +177,12 @@
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <div class="row">
                                     <div class="col">
-                                       <label>UserId  :- </label>
+                                        <label>UserId  :- </label>
                                     </div>
                                     <div class="col">
                                         <h6>{{user.username}}</h6>
                                     </div>
                                 </div>
-                               
                                 <div class="row">
                                     <div class="col">
                                         <lable>Name    :- </lable>
@@ -190,16 +191,14 @@
                                         <h6>{{user.profile.name}}</h6>
                                     </div>
                                 </div>
-                               
                                 <div class="row">
-                                    <div class="col" style="width: auto;">
+                                    <div class="col" style="max-width: 90px;">
                                       <label>Email   :- </label>
                                     </div>
-                                    <div class="col">
+                                    <div class="col"style="max-width: 90px; text-align:right; ">
                                         <h6 >{{user.email}}</h6>
                                     </div>
                                 </div>
-                               
                                 <div class="row">
                                     <div class="col">
                                         <label>Location  :-</label>
