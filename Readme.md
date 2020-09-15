@@ -8,6 +8,7 @@ It aims to build a community of people trying to guide the newbie coders to avoi
 
 Made by Nishant Kumar (@nishantkumarr) this site is free for use by any indivisual and its code is absolutely free for coders to build it their own way or change a few things. 
 
+Check a working model here :- https://writeitt.herokuapp.com/
 
 For any query reach out to  Nishant Kumar 
 
