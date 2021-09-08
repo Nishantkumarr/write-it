@@ -13,14 +13,27 @@
 - User authentication system 
 
 
-**Few Pictures of the site **
+**Few Pictures of the site**
 <img src="readmeImg\Home.png" >
+
+
 <img src="readmeImg\Aboutus.png" >
+
+
 <img src="readmeImg\Blog.png" >
+
+
 <img src="readmeImg\Comment.png" >
+
+
 <img src="readmeImg\Register.png" >
+
+
 <img src="readmeImg\Whatweoffer.png" >
+
+
 <img src="readmeImg\AboutMe.png" >
+
 
 
 
