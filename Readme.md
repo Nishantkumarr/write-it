@@ -1,19 +1,44 @@
-# WrITe
+**Write-IT**
 
-Django-Blog
+- It is a Python-Django based blogging site. We offer you an opportunity to share what you know with a community of learners.
+- Wise men said "Going together is a wise option". And that's our main focus at Write-It, to create a community of developers helping each others . Working together to make world a better place to live
+- A web based blogging site made with python-Django backend. And a HTML/CSS frontend.
+- This website is deployed on Heroku . You can have a look at it by clicking [here](https://writeitt.herokuapp.com/).
 
-A blog site made from Django, Html , Css , Bootstrap, Js. With the thought to provide people a platform to share their stories and experiences with code and coding. 
-It aims to build a community of people trying to guide the newbie coders to avoid the mistakes by sharing their own stories.
+**Features : -** 
+
+- Responsive Layout
+- Multi-User Based
+- Admin –Panel to visualize the Data
+- User authentication system 
+
+**Project Structure :-** 
+**
+
+**
+`	`Django\_project/
+
+`		`manage.py
+
+`		`Django\_project/
+
+`			`\_\_init\_\_.py
+
+`			`settings.py
+
+`			`urls.py
+
+`			`Wsgi.py
 
 
-Made by Nishant Kumar (@nishantkumarr) this site is free for use by any indivisual and its code is absolutely free for coders to build it their own way or change a few things. 
 
-Check a working model here :- https://writeitt.herokuapp.com/
+<!-- <img src="">
+ -->
 
-For any query reach out to  Nishant Kumar 
 
-**Linkedin** :- https://www.linkedin.com/in/nishant-kumar-2b0935136/
 
-**Github** :-   https://github.com/Nishantkumarr
 
-**Email** :- mailittonisnatkumar@gmail.com
+
+
+
+
